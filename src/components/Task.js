@@ -3,7 +3,7 @@ import Button from "./Button"
 const Task = ({ task, onDelete, onReminder }) => {
 
   return (
-    <div className="task" onDoubleClick={() => onReminder(task.id)}>
+    <div className="task" title="You can unable/disable reminder by double click" onDoubleClick={() => onReminder(task.id)}>
       
       {task.reminder?<span className="task__reminder"></span>:''}
       <div className="task__info">

@@ -5,22 +5,9 @@ import Header from "./components/Header";
 import Tasks from "./components/Tasks";
 
 function App() {
-  const [tasks, setTasks] = useState([
-    {
-      id: 1,
-      title: 'Work Hard !',
-      time: 'Always',
-      reminder: true
-    },
-    {
-      id: 2,
-      title: 'Wake up early',
-      time: 'Always',
-      reminder: true
-    }
-  ])
+  const [tasks, setTasks] = useState([])
 
-  const [idCount, setIdCount] = useState(tasks.length + 1)
+  const [idCount, setIdCount] = useState(tasks.length)
 
   const [formState, setFormState] = useState(false)
 
