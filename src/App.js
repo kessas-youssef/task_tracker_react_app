@@ -38,8 +38,10 @@ function App() {
     )
 
   // Add Task
-  const addTask = task =>
+  const addTask = task => {
     setTasks(prevTasks => [...prevTasks, { id: idCount, ...task }])
+    setIdCount(idCount + 1)
+  }
 
   // Open or Close form (not the best way)
   // const openCloseForm = e => {
