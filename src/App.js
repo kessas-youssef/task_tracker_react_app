@@ -1,11 +1,18 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Footer from "./components/Footer";
 import Form from "./components/Form";
 import Header from "./components/Header";
 import Tasks from "./components/Tasks";
 
 function App() {
-  const [tasks, setTasks] = useState([])
+
+  let previousTasks = localStorage.getItem('tasks') ? JSON.parse(localStorage.getItem('tasks')) : []
+
+  useEffect(() => localStorage.setItem('tasks', JSON.stringify(tasks))
+  )
+
+
+  const [tasks, setTasks] = useState([...previousTasks])
 
   const [idCount, setIdCount] = useState(tasks.length)
 
@@ -31,10 +38,8 @@ function App() {
     )
 
   // Add Task
-  const addTask = task => {
+  const addTask = task =>
     setTasks(prevTasks => [...prevTasks, { id: idCount, ...task }])
-    setIdCount(() => idCount + 1)
-  }
 
   // Open or Close form (not the best way)
   // const openCloseForm = e => {
