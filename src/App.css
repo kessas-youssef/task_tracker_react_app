@@ -32,7 +32,6 @@ button {
 }
 
 .header__btn--close {
-    display: none;
     padding: 1rem;
     background-color: rgb(120, 31, 6);
     border: none;
@@ -44,7 +43,6 @@ button {
 
 /* Task Form */
 .taskForm {
-    display: none;
     margin: .4em;
 }
 

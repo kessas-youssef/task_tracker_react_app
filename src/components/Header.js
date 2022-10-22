@@ -1,11 +1,10 @@
 import Button from "./Button"
 
-const Header = ({openClose}) => {
+const Header = ({openClose, formState}) => {
     return (
         <header className="header">
             <h1 className="header__title">Task Tracker</h1>
-            <Button btnClassName='header__btn--open' btnText='Add' onClick={openClose} />
-            <Button btnClassName='header__btn--close' btnText='Close' onClick={openClose} />
+            <Button btnClassName={`header__btn--${formState.action}`} btnText={formState.btnText} onClick={openClose} />
         </header>
     )
 }

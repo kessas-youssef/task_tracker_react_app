@@ -22,6 +22,8 @@ function App() {
 
   const [idCount, setIdCount] = useState(tasks.length + 1)
 
+  const [formState, setFormState] = useState(false)
+
   // Delete Task:
   const deleteTask = (id) => {
     setTasks(tasks.filter(task => task.id !== id))
@@ -47,25 +49,33 @@ function App() {
     setIdCount(() => idCount + 1)
   }
 
-  // Open or Close form 
-  const openCloseForm = e => {
-    if(e.target.className === 'header__btn--open') {
-      document.querySelector('.header__btn--close').style.display = 'block'
-      e.target.style.display = 'none'
-      document.querySelector('.taskForm').style.display = 'block'
-    }
-    else {
-      document.querySelector('.header__btn--open').style.display = 'block'
-      e.target.style.display = 'none'
-      document.querySelector('.taskForm').style.display = 'none'
-    }
-    
-  } 
+  // Open or Close form (not the best way)
+  // const openCloseForm = e => {
+  //   if (e.target.className === 'header__btn--open') {
+  //     document.querySelector('.header__btn--close').style.display = 'block'
+  //     e.target.style.display = 'none'
+  //     document.querySelector('.taskForm').style.display = 'block'
+  //   }
+  //   else {
+  //     document.querySelector('.header__btn--open').style.display = 'block'
+  //     e.target.style.display = 'none'
+  //     document.querySelector('.taskForm').style.display = 'none'
+  //   }
+
+  // }
+
+
+  // Better way of toggling form display
+  const formDisplay = () => {
+    formState?setFormState(false):setFormState(true)
+    console.log('JJ');
+  }
 
   return (
     <div className="appContainer">
-      <Header openClose={openCloseForm} />
-      <Form addTask={addTask} />
+      <Header openClose={formDisplay} formState={formState?{action:'close',btnText:'Close'}:{action:'open',btnText:'Add'}} />
+      {formState && <Form addTask={addTask} />}
+
       {idCount ?
         <Tasks
           tasks={tasks}
@@ -75,7 +85,6 @@ function App() {
         :
         <p className="tasks__empty">You have no tasks yet.</p>
       }
-
       <Footer />
     </div>
   );
