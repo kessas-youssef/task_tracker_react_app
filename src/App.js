@@ -66,14 +66,12 @@ function App() {
 
 
   // Better way of toggling form display
-  const formDisplay = () => {
-    formState?setFormState(false):setFormState(true)
-    console.log('JJ');
-  }
+  const formDisplay = () => formState ? setFormState(false) : setFormState(true)
+
 
   return (
     <div className="appContainer">
-      <Header openClose={formDisplay} formState={formState?{action:'close',btnText:'Close'}:{action:'open',btnText:'Add'}} />
+      <Header openClose={formDisplay} formState={formState ? { action: 'close', btnText: 'Close' } : { action: 'open', btnText: 'Add' }} />
       {formState && <Form addTask={addTask} />}
 
       {idCount ?
