@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+	<title>Task Tracker</title>
+</head>
+
+<body>
+	<div class="root">
+		<div class="appContainer">
+			<header class="header">
+				<h1 class="header__title">Task Tracker</h1>
+				<button class="header__btn">Add</button>
+			</header>
+			<form class="taskForm">
+				<div class="taskForm__inputSet">
+					<label for="taskForm__titleInput" class="taskForm__titleLabel">Task</label>
+					<input type="text" class="taskForm__titleInput" id="taskForm__titleInput" required>
+				</div>
+				<div class="taskForm__inputSet">
+					<label for="taskForm__timeInput" class="taskForm__timeLabel">Day & Time</label>
+					<input type="text" class="taskForm__timeInput" id="taskForm__timeInput">
+				</div>
+				<div class="taskForm__checkBox">
+					<label for="taskForm__reminder">Set reminder</label>
+					<input type="checkbox" class="taskForm__reminder" id="taskForm__reminder">
+				</div>
+				<input type="submit" value="Save Task" class="taskForm__submit">
+			</form>
+			<section class="tasks">
+				<div class="task">
+					<div class="task__info">
+						<h3 class="task__title">Work Hard !</h3>
+						<p class="task__time">Always</p>
+					</div>
+					<button class="task__delete">x</button>
+				</div>
+				<div class="task">
+					<div class="task__info">
+						<h3 class="task__title">Wake up early</h3>
+						<p class="task__time">Always</p>
+					</div>
+					<button class="task__delete">x</button>
+				</div>
+			</section>
+			<footer class="footer">
+				<h5 class="footer__text">By Kessas Youcef</h5>
+				<a class="footer__about" href="#">About</a>
+			</footer>
+		</div>
+	</div>
+</body>
+
+</html>

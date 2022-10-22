@@ -2,7 +2,7 @@ button {
     cursor: pointer;
 }
 .appContainer {
-    max-width: 500px;
+    width: 450px;
     border: 2px solid rgb(85, 85, 198);
     border-radius: 5px;
 
@@ -21,7 +21,7 @@ button {
     align-items: center;
 }
 
-.header__btn--open {
+.header__btn {
     padding: 1rem;
     background-color: green;
     border: none;
@@ -31,20 +31,8 @@ button {
     border-radius: 3px;
 }
 
-.header__btn--close {
-    display: none;
-    padding: 1rem;
-    background-color: rgb(120, 31, 6);
-    border: none;
-    color: white;
-    font-weight: bold;
-    letter-spacing: 1px;
-    border-radius: 3px;
-}
-
 /* Task Form */
 .taskForm {
-    display: none;
     margin: .4em;
 }
 
@@ -84,31 +72,11 @@ button {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    position: relative;
 
     background-color: antiquewhite;
     padding: 1em;
     margin-block: 1em;
     border-radius: 0 10px 0 10px;
-}
-
-.task::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-}
-
-.task__reminder {
-    position: absolute;
-    height: 100%;
-    top: 0;
-    left: 0;
-    right: 98%;
-    background-color: green;
-    border-radius: 0 0 0 10px;
 }
 
 .task__time {
@@ -121,7 +89,6 @@ button {
     font-size: 2rem;
     color: red;
     font-weight: 900;
-    z-index: 1;
 }
 
 /* Footer */
@@ -132,8 +99,4 @@ button {
 
 .footer__about {
     text-decoration: none;
-    font-weight: bold;
-}
-.footer__about:visited {
-    color: currentColor;
 }
