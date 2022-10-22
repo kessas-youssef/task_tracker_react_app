@@ -13,7 +13,7 @@ const Task = ({ task, onDelete, onReminder }) => {
       <Button 
       btnClassName='task__delete' 
       btnText='x' 
-      onCLick={() => onDelete(task.id)} />
+      onClick={() => onDelete(task.id)} />
     </div>
   )
 }

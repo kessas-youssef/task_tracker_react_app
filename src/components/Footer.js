@@ -1,5 +1,7 @@
 import { useState } from "react"
 
+// Needa work on current date
+
 const Footer = () => {
   const [date, setDate] = useState(new Date().getFullYear())
   return (
